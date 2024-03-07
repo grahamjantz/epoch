@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const Countdown = () => {
   const [countdown, setCountdown] = useState('');
@@ -29,10 +30,16 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className='countdown flex justify-center items-end'>
-      <p className='text-xl font-bold'>
-        Time remaining: <b className='text-xl text-red-400 font-bold '>{countdown}</b>
-      </p>
+    <div className='w-full countdown flex justify-center items-end'>
+        {countdown === '' ? (
+            <div className='w-full'>
+                <LinearProgress />
+            </div>
+        ) : (
+            <p className='text-xl font-bold'>
+                Time remaining: <b className='text-xl text-red-400 font-bold '>{countdown}</b>
+            </p>
+        )}
     </div>
   );
 };

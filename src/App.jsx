@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Countdown from './Countdown'
+import LinearProgress from '@mui/material/LinearProgress';
 
 function App() {
   
@@ -33,22 +34,34 @@ function App() {
       <p className='leading-none'>&nbsp; At <b>03:14:08 UTC on 19 January 2038</b> the signed 32-bit integer representing seconds from the Unix epoch, <b>(00:00:00 UTC on Jan 1, 1970)</b> will invert, becoming negative and potentially causing damage to systems relying on this number. Such as this one.</p>
     
       <hr className='w-full'/>
-      <div className='flex h-8'>
-        <details className='text-red-400 font-light inline text-right relative '>
-          <summary className='relative underline'>
-            0
-          </summary>
-          <p className='absolute w-96 text-left bg-red-100 p-4 rounded'>
-            <b className='font-bold'>Sign bit.</b> When this bit reaches 1, the number will become negative, making the date <b>20:45:52 UTC on 13 December 1901.</b> ~68y prior to the Unix Epoch.
-
-          </p>
-        </details>
-        {currentDate.slice(0,7)} &nbsp;
-        {currentDate.slice(7,15)} &nbsp;
-        {currentDate.slice(15,23)} &nbsp;
-        {currentDate.slice(23,31)}
-      </div>
-      <p>{new Date(currentTime).toUTCString()}</p>
+      {currentDate === '' ? (
+        <div className='w-full'>
+          
+          <LinearProgress />
+        </div>
+      ) : (
+        <div className='flex h-8'>
+          <details className='text-red-400 font-light inline text-right relative '>
+            <summary className='relative underline'>
+              0
+            </summary>
+            <p className='absolute w-96 text-left bg-red-100 p-4 rounded'>
+              <b className='font-bold'>Sign bit.</b> When this bit reaches 1, the number will become negative, making the date <b>20:45:52 UTC on 13 December 1901.</b> ~68y prior to the Unix Epoch.
+  
+            </p>
+          </details>
+          {currentDate.slice(0,7)} &nbsp;
+          {currentDate.slice(7,15)} &nbsp;
+          {currentDate.slice(15,23)} &nbsp;
+          {currentDate.slice(23,31)}
+        </div>
+      )}
+      {currentDate === '' ? (
+        <div className='w-full'>
+        </div>
+      ) : (
+        <p>{new Date(currentTime).toUTCString()}</p>
+      )}
       <ul className='explanation flex w-full justify-between'>
         <li>
           <p>0{currentDate.slice(0,7)}</p>
