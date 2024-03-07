@@ -72,3 +72,24 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+.explanation {
+  text-align: center;
+}
+
+.explanation li {
+  width: max-content;
+}
+
+.explanation li div:first-of-type{
+  height: 4px;
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+.explanation span {
+  height: 4px;
+  width: 50%;
+  border-right: 1px solid gray;
+}
