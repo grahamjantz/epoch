@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className='App w-[75vw] max-w-xl h-[75vh] flex flex-col items-center gap-4 font-mono'>
-      <h1 className=' mb-4 underline flex items-end'><img src="/clock-icon.webp" className='h-12 w-12'/> Epochalypse</h1>
+      <h1 className=' mb-4 underline flex items-end text-4xl gap-1'><img src="/clock-icon.webp" className='h-8 w-8'/> Epochalypse</h1>
       <p className='leading-none'>&nbsp; At <b>03:14:08 UTC on 19 January 2038</b> the signed 32-bit integer representing seconds from the Unix epoch, <b>(00:00:00 UTC on Jan 1, 1970)</b> will invert, becoming negative and potentially causing damage to systems relying on this number. Such as this one.</p>
     
       <hr className='w-full'/>
