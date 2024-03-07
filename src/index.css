@@ -32,7 +32,6 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
   min-height: 100vh;
 }
 
@@ -78,7 +77,8 @@ button:focus-visible {
 }
 
 .explanation li {
-  width: max-content;
+  width: 24%;
+  min-width: 125px;
 }
 
 .explanation li div:first-of-type{

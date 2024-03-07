@@ -29,7 +29,7 @@ function App() {
   },"1000")
 
   return (
-    <div className='App w-[75vw] max-w-xl h-[75vh] flex flex-col items-center gap-4 font-mono'>
+    <div className='App w-[75vw] max-w-xl min-h-[75vh] flex flex-col items-center gap-4 font-mono pb-16'>
       <h1 className=' mb-4 underline flex items-end text-4xl gap-1'><img src="/clock-icon.webp" className='h-8 w-8'/> Epochalypse</h1>
       <p className='leading-none'>&nbsp; At <b>03:14:08 UTC on 19 January 2038</b> the signed 32-bit integer representing seconds from the Unix epoch, <b>(00:00:00 UTC on Jan 1, 1970)</b> will invert, becoming negative and potentially causing damage to systems relying on this number. Such as this one.</p>
     
@@ -40,20 +40,20 @@ function App() {
           <LinearProgress />
         </div>
       ) : (
-        <div className='flex h-8'>
+        <div className='flex flex-wrap h-8'>
           <details className='text-red-400 font-light inline text-right relative '>
             <summary className='relative underline'>
               0
             </summary>
-            <p className='absolute w-96 text-left bg-red-100 p-4 rounded'>
+            <p className='absolute w-96 text-left bg-red-100 p-4 rounded max-w-[80vw]'>
               <b className='font-bold'>Sign bit.</b> When this bit reaches 1, the number will become negative, making the date <b>20:45:52 UTC on 13 December 1901.</b> ~68y prior to the Unix Epoch.
   
             </p>
           </details>
-          {currentDate.slice(0,7)} &nbsp;
-          {currentDate.slice(7,15)} &nbsp;
-          {currentDate.slice(15,23)} &nbsp;
-          {currentDate.slice(23,31)}
+          <p>{currentDate.slice(0,7)}</p> &nbsp;
+          <p>{currentDate.slice(7,15)}</p> &nbsp;
+          <p>{currentDate.slice(15,23)}</p> &nbsp;
+          <p>{currentDate.slice(23,31)}</p>
         </div>
       )}
       {currentDate === '' ? (
@@ -62,7 +62,7 @@ function App() {
       ) : (
         <p>{new Date(currentTime).toUTCString()}</p>
       )}
-      <ul className='explanation flex w-full justify-between'>
+      <ul className='explanation flex w-full flex-wrap justify-between'>
         <li>
           <p>0{currentDate.slice(0,7)}</p>
           <div></div>

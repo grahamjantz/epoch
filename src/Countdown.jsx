@@ -36,8 +36,8 @@ const Countdown = () => {
                 <LinearProgress />
             </div>
         ) : (
-            <p className='text-xl font-bold'>
-                Time remaining: <b className='text-xl text-red-400 font-bold '>{countdown}</b>
+            <p className='text-xl font-bold flex flex-wrap text-center w-full justify-center'>
+                Time remaining:&nbsp;<b className='text-xl text-red-400 font-bold '>{countdown}</b>
             </p>
         )}
     </div>
